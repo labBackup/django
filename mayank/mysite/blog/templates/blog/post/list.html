@@ -3,6 +3,7 @@
 {% block title %}Posts{% endblock %}
 
 {% block content %}
+    <div id='postlist'>
     <h1>Posts</h1>
     {% for post in posts %}
         <div class="post">
@@ -11,4 +12,6 @@
             <p>{{ post.body|truncatewords:30|linebreaks }}</p>
         </div>
     {% endfor %}
+    </div>
+    {% include "pagination.html" with page=posts%}
 {% endblock %}
