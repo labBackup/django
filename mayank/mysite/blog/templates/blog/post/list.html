@@ -8,10 +8,13 @@
     {% for post in posts %}
         <div class="post" >
             <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+            <p class="tags">Tags: {{ post.tags.all|join:", " }}</p>
             <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
             <p>{{ post.body|truncatewords:30|linebreaks }}</p>
         </div>
     {% endfor %}
     </div>
-    {% include "pagination.html" with page=page_obj%}
+    {% comment %}page_obj <- This is for CLASS-VIEW-MODEL{% endcomment %}
+    {% comment %}posts <- This is for FUNCTION-VIEW-MODEL{% endcomment %}
+    {% include "pagination.html" with page=posts %} 
 {% endblock %}
