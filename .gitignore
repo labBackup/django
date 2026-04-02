@@ -96,3 +96,9 @@ ads/
 
 *.css
 *.pyc
+
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
