@@ -102,3 +102,5 @@ ads/
 .flaskenv*
 !.env.project
 !.env.vault
+
+home/
